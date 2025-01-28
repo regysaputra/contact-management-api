@@ -87,11 +87,10 @@ return [
              * Absolute path to directory where to export views
              */
             'views' => base_path('resources/views/vendor/l5-swagger'),
-
             /*
              * Edit to set the api's base path
              */
-            'base' => env('L5_SWAGGER_BASE_PATH', null),
+            'base' => env('L5_SWAGGER_BASE_PATH', '/'),
 
             /*
              * Absolute path to directories that should be excluded from scanning

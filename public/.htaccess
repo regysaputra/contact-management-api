@@ -3,6 +3,7 @@
         Options -MultiViews -Indexes
     </IfModule>
 
+    # Enable URL rewriting
     RewriteEngine On
 
     # Handle Authorization Header
@@ -18,4 +19,7 @@
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ index.php [L]
+
+#    RewriteCond %{REQUEST_URI} ^/swagger-ui/dist$
+#    RewriteRule ^(.*)$ /swagger-ui/dist/index.php [L]
 </IfModule>

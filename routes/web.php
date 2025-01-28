@@ -6,6 +6,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/api/docs', function () {
+    return view('dist/docs');
+});
+
 Route::get('/phpmyinfo', function () {
     phpinfo();
 })->name('phpmyinfo');
@@ -32,5 +36,4 @@ Route::middleware(\App\Http\Middleware\ApiAuthMiddleware::class)->group(function
     Route::delete('/api/contacts/{idContact}/addresses/{idAddress}', [\App\Http\Controllers\AddressController::class, 'destroy'])
         ->where('idContact', '[0-9]+')
         ->where('idAddress', '[0-9]+');
-
 });
